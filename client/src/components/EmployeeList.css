@@ -1,0 +1,90 @@
+.employee-list-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-cell {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  font-weight: bold;
+  width: 82px;
+  height: 46px;
+}
+
+.employee-list-body {
+  padding: 20px;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.employee-cell {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.employee-cell:last-child {
+  border-right: 1px solid #ccc;
+}
+
+.employee-cell span {
+  font-weight: bold;
+  color: #337ab7;
+}
+
+.employee-cell span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.employee-list-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-cell i {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.header-cell span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #337ab7;
+}
+
+.header-cell span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+

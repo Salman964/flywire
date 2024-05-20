@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchActiveEmployees } from '../services/employeeService';
-
+import './EmployeeList.css'
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
 
@@ -11,34 +11,64 @@ const EmployeeList = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Employee List</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Hire Date</th>
-            <th>Manager ID</th>
-            <th>Active</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employees.map(employee => (
-            <tr key={employee.id}>
-              <td>{employee.id}</td>
-              <td>{employee.first_name}</td>
-              <td>{employee.last_name}</td>
-              <td>{employee.position}</td>
-              <td>{employee.hire_date}</td>
-              <td>{employee.manager_id}</td>
-              <td>{employee.active ? 'Yes' : 'No'}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="employee-list-container">
+      <h1>Active Employees</h1>
+      <div className="employee-list-header">
+        <div className="header-row">
+          <div className="header-cell">
+            <span>ID</span>
+          </div>
+          <div className="header-cell">
+            <span>First Name</span>
+          </div>
+          <div className="header-cell">
+            <span>Last Name</span>
+          </div>
+          <div className="header-cell">
+            <span>Position</span>
+          </div>
+          <div className="header-cell">
+            <span>Hire Date</span>
+          </div>
+          <div className="header-cell">
+            <span>Manager ID</span>
+          </div>
+          <div className="header-cell">
+            <span>Active</span>
+          </div>
+        </div>
+      </div>
+      <div className="employee-list-body">
+        <table className="employee-table">
+          <tbody>
+            {employees.map(employee => (
+              <tr key={employee.id} className="employee-row">
+                <td className="employee-cell">
+                  <span>{employee.id}</span>
+                </td>
+                <td className="employee-cell">
+                  <span>{employee.first_name}</span>
+                </td>
+                <td className="employee-cell">
+                  <span>{employee.last_name}</span>
+                </td>
+                <td className="employee-cell">
+                  <span>{employee.position}</span>
+                </td>
+                <td className="employee-cell">
+                  <span>{employee.hire_date}</span>
+                </td>
+                <td className="employee-cell">
+                  <span>{employee.manager_id}</span>
+                </td>
+                <td className="employee-cell">
+                  <span>{employee.active ? 'Yes' : 'No'}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
