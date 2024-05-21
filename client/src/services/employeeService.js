@@ -8,9 +8,9 @@ export const fetchActiveEmployees = () => {
   return api.get('/employees/active');
 };
 
-export const fetchEmployeeById = (id) => {
-  return api.get(`/employees/${id}`);
-};
+  export const fetchEmployeeById = (id) => {
+    return api.get(`/employees/${id}`);
+  };
 
 export const createEmployee = (employeeData) => {
   return api.post('/employees', employeeData);
