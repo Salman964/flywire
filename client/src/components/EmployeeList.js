@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { fetchActiveEmployees } from '../services/employeeService';
-// import { fetchEmployeesHiredInRange } from '../services/employeeService';
+import { useNavigate } from 'react-router-dom';
+import './EmployeeList.css';
 
-import './EmployeeList.css'
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchActiveEmployees().then(response => {
       setEmployees(response.data);
     });
   }, []);
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
 
   return (
     <div className="employee-list-container">
@@ -38,6 +43,9 @@ const EmployeeList = () => {
           <div className="header-cell">
             <span>Active</span>
           </div>
+          <div className="header-cell">
+            <span>Action</span>
+          </div>
         </div>
       </div>
       <div className="employee-list-body">
@@ -64,7 +72,12 @@ const EmployeeList = () => {
                   <span>{employee.manager_id}</span>
                 </td>
                 <td className="employee-cell">
-                  <span>{employee.active ? 'Yes' : 'No'}</span>
+                  <span>Yes</span>
+                </td>
+                <td className="employee-cell">
+                  <span onClick={() => handleNavigate(`/employees/${employee.id}/deactivate`)}>
+                    Deactivate
+                  </span>
                 </td>
               </tr>
             ))}
